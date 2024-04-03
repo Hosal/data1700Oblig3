@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wanna Buy Some Tickets??</title>
+    <script src="jsForIndex.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+</head>
+<body class="bg-dark">
+<style>
+    body {
+        font-family: Arial;
+        color: white;
+        font-size: 1.2rem;
+    }
+</style>
+<div class="container" class="p-6">
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <h1>Order Tickets</h1>
+
+            <p>
+                <label for="choose">Choose a Movie:</label>
+                <select id="choose" class="form-control">
+                    <option style="display:none" value="">Choose movie here...</option>
+                    <option>Casablanca</option>
+                    <option>Fort Apache</option>
+                    <option>Apocolypse Now</option>
+                </select>
+                <span id="chooseError"></span>
+            </p>
+
+            <p>
+                <label for="amount">Amount</label>
+                <input type="text" class="form-control" id="amount">
+                <span id="amountError"></span>
+            </p>
+
+            <table>
+                <tr>
+                    <td>
+                        <label for="fName">Firstname</label>
+                        <input type="text" class="form-control" id="fName">
+                        <span id="fNameError"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="lName">Lastname</label>
+                        <input type="text" class="form-control" id="lName">
+                        <span id="lNameError"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="tel">Tel</label>
+                        <input type="text" class="form-control" id="tel">
+                        <span id="telError"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email">
+                        <span id="emailError"></span>
+                    </td>
+                </tr>
+            </table>
+            <div class="pt-3 pb-3">
+                <button onclick="buyTicket()" class="btn btn-primary">Buy ticket</button>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <h2>All tickets</h2>
+            <div id="arrayField"></div>
+            <div class="pt-3">
+                <button onclick="deleteTickets()" class="btn btn-danger">Delete all tickets</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
