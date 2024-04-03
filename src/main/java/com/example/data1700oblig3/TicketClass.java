@@ -1,7 +1,7 @@
 package com.example.data1700oblig3;
 
 
-public class ArrayClassThing {
+public class TicketClass {
     private String choose;
     private String amount;
     private String fName;
