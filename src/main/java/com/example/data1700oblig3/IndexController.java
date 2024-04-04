@@ -1,5 +1,6 @@
 package com.example.data1700oblig3;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,19 +11,20 @@ import java.util.List;
 @RestController
 
 public class IndexController {
-    private final List<TicketClass> allTickets = new ArrayList<>();
+    @Autowired
+    private TicketRepository rep;
     @PostMapping("/save")
     public void saveTicket(TicketClass purchasedTicket){
-        allTickets.add(purchasedTicket);
+        rep.saveTicket(purchasedTicket);
     }
 
     @GetMapping("/getAll")
     public List<TicketClass> getAll(){
-        return allTickets;
+        return rep.getAllTickets();
     }
 
     @GetMapping("/deleteAll")
     public void deleteAll(){
-        allTickets.clear();
+        rep.deleteAllTickets();
     }
 }
