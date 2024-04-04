@@ -16,7 +16,7 @@ let innEmail;
 
 
 $.get("/getAll").then(data => {
-    if(out.value !== "") {
+    if(data.toString() !== document.getElementById("arrayField").innerHTML) {
         printTickets(data);
     }
 });
