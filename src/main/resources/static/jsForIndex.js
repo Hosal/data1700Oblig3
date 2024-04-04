@@ -14,6 +14,13 @@ let innlName;
 let innTel;
 let innEmail;
 
+
+$.get("/getAll").then(data => {
+    if(out.value !== "") {
+        printTickets(data);
+    }
+});
+
 function validateFields(){
     innChoose = document.getElementById("choose").value;
     innAmount = document.getElementById("amount").value;
@@ -140,6 +147,7 @@ function printTickets(tickets){
         out += "</tr>";
     }
     document.getElementById("arrayField").innerHTML = out;
+    return out;
 }
 allfilled = false;
 function deleteTickets() {
