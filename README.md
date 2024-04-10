@@ -15,4 +15,6 @@ through the webpage. You can also delete all the tickets with the delete button
 if you so please. It uses SQL for the saving of the data, both with the help of a Java file, and with
 the help of an SQL file. It also uses JavaScrip for general functionality, 
 and HTML combined with Bootstrap for the styling. The
-screenshots needed for Oblig 2 can be found under static/photos.
+screenshots needed for Oblig 2 can be found under static/photos, and the walkthrough video can be found
+under static/video. The video has been added into the project files as opposed to uploading it on YouTube
+with the teacher's permission.
