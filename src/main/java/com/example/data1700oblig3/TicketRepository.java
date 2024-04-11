@@ -17,13 +17,27 @@ public class TicketRepository {
     }
 
     public List<TicketClass> getAllTickets(){
-        String sql = "SELECT * FROM TicketClass";
+        String sql = "SELECT * FROM TicketClass ORDER BY lName";
         List<TicketClass> allTickets = db.query(sql, new BeanPropertyRowMapper(TicketClass.class));
         return allTickets;
     }
 
     public void deleteAllTickets (){
         String sql = "DELETE FROM TicketClass";
+        String sql2 = "DROP TABLE TicketClass";
+        String sql3 = "CREATE TABLE TicketClass\n" +
+                "(\n" +
+                "    id INTEGER AUTO_INCREMENT NOT NULL,\n" +
+                "    choose VARCHAR(255) NOT NULL,\n" +
+                "    amount VARCHAR(255) NOT NULL,\n" +
+                "    fname VARCHAR(255) NOT NULL,\n" +
+                "    lname VARCHAR(255) NOT NULL,\n" +
+                "    tel VARCHAR(255) NOT NULL,\n" +
+                "    email VARCHAR(255) NOT NULL,\n" +
+                "    PRIMARY KEY (id)\n" +
+                ")";
         db.update(sql);
+        db.update(sql2);
+        db.update(sql3);
     }
 }
